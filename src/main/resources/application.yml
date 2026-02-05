@@ -1,0 +1,17 @@
+spring:
+  application:
+    name: cybersafegirl
+  ai:
+    openai:
+      # This URL points to Groq's API
+      base-url: https://api.groq.com/openai
+      # We will set this key in the environment variables later
+      api-key: {API_KEY}
+      chat:
+        options:
+          # Default to the smart model
+          model: llama-3.3-70b-versatile
+          temperature: 0.7
+
+server:
+  port: 8080
