@@ -1,11 +1,15 @@
-# Build Stage (Using Amazon Corretto 21 - Very Stable)
-FROM maven:3.9.9-amazoncorretto-21 AS build
+# 1. Build Stage (Uses pure Java 25)
+FROM openjdk:25-jdk-slim AS build
 WORKDIR /app
 COPY . .
+
+# Grant execution permissions to the wrapper
 RUN chmod +x mvnw
+
+# Build using the wrapper (skipping tests for speed)
 RUN ./mvnw clean package -DskipTests
 
-# Run Stage
+# 2. Run Stage (Runtime)
 FROM openjdk:25-jdk-slim
 WORKDIR /app
 COPY --from=build /app/target/*.jar app.jar
