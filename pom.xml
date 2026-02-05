@@ -13,7 +13,7 @@
     <name>cybersafegirl</name>
     <description>Demo project for Spring Boot</description>
     <properties>
-        <java.version>25</java.version> <spring-ai.version>1.0.0-M6</spring-ai.version> </properties>
+        <java.version>23</java.version> <spring-ai.version>1.0.0-M6</spring-ai.version> </properties>
     <dependencies>
         <dependency>
             <groupId>org.springframework.boot</groupId>
